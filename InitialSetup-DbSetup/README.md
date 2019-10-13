@@ -22,3 +22,17 @@ virtualenv env_<ANY-NAME>
 deactivate
 ```
 
+
+### TO RUN
+Activate your virtual environment and install the below
+```bash
+pip install mysql-connector-python-rf
+pip install requests
+```
+
+Before running data to db, edit dbConnect.py with appropriate details, EDIT everything with <>
+
+```bash
+python .<GOTO WHERE YOU CLONED>\InitialSetup-DbSetup\loadBooks.py
+```
+
