@@ -1,19 +1,24 @@
-BIBLExploration.com
-
-InitialSetup-DbSetup
+# BIBLExploration.com
 
 This section is to load the data to your MySQL DB.
 
-PREREQUISITE
+## PREREQUISITE
 Install MySQL
 Python 3.7 above
 
 
-Create Virtual Env
-cmd : virtualenv env_<ANY-NAME>
+### Create Virtual Env
+```bash
+virtualenv env_<ANY-NAME>
+```
 
-Activate Virtual Env
-cmd : .\<PATH To your env_<ANY-NAME>>\Scripts\activate
+### Activate Virtual Env
+```bash
+.\<PATH To your env_<ANY-NAME>>\Scripts\activate
+```
 
-Deactivate Env
+### Deactivate Env
+```bash
 deactivate
+```
+
