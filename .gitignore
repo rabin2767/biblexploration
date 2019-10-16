@@ -105,3 +105,6 @@ venv.bak/
 
 #intellj
 .idea/
+
+#environment skip
+env_*/
