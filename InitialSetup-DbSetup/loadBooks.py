@@ -1,5 +1,5 @@
 from logConnect import initializeLog
-from dbOps import insertIntoBooks, books
+from dbOps import insertIntoBooks, books, createDatabase
 import requests
 
 log = initializeLog("loadbooks.log")
@@ -86,6 +86,7 @@ def getDataFromBibleApi(book_name, chapters):
 
 
 for x in books:
+    createDatabase()
     i = 1
     while i <= int(booksAndChapters[x]):
         print("Book :- " + x + " : " + str(i))
