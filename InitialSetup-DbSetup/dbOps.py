@@ -1,5 +1,6 @@
-from dbConnect import connection
+from dbConnect import connection, createDatabase
 
+createDatabase()
 cn = connection()
 cur = cn.cursor()
 
