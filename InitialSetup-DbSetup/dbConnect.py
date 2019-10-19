@@ -11,7 +11,13 @@ config = {
     "host": hostName,
     "user": userName,
     "passwd": password,
-    "database": databaseName
+    "database": databaseName,
+    "auth_plugin": "mysql_native_password"
+}
+
+configToCreateDb = {
+    "host": hostName,
+    "user": userName,
     "passwd": password,
     "auth_plugin": "mysql_native_password"
 }
