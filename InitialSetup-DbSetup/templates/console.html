@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="{{url_for('static', filename='config.js')}}">
+    </script>
+    <script>
+        function tt() {
+            alert("In Progress !")
+        }
+    </script>
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/setup">Bible Xploration</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Database Setup <small>Configuration details</small></h1>
+            </div>
+
+            <ol class="breadcrumb">
+                <li><a href="/setup">Home</a></li>
+                <li><a href="/setup_continue">Setup</a></li>
+                <li><a href="/console">Console</a></li>
+            </ol>
+
+            <div class="col-md-8">
+
+
+                <div>
+                    <nav aria-label="...">
+                      <ul class="pager">
+                        <li class="previous"><a href="/setup"><span aria-hidden="true">&larr;</span> Back</a></li>
+                      </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

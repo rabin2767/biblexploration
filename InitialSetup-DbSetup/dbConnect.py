@@ -1,12 +1,13 @@
 import mysql.connector as connector
 from logConnect import initializeLog
+import dbSetupCache as cache
 
 log = initializeLog("oneTimeSetup.log")
 
-hostName = "<ADDRESS>"
-userName = "<USERNAME>"
-password = "<PASSWORD>"
-databaseName = "<TABLE_NAME>"
+hostName = cache.hostname
+userName = cache.username
+password = cache.password
+databaseName = cache.database
 config = {
     "host": hostName,
     "user": userName,
