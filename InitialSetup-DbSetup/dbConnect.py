@@ -4,23 +4,18 @@ import dbSetupCache as cache
 
 log = initializeLog("oneTimeSetup.log")
 
-hostName = cache.hostname
-userName = cache.username
-password = cache.password
-databaseName = cache.database
 config = {
-    "host": hostName,
-    "user": userName,
-    "passwd": password,
-    "database": databaseName,
+    "host": cache.hostname,
+    "user": cache.username,
+    "passwd": cache.password,
+    "database": cache.database,
     "auth_plugin": "mysql_native_password"
 }
 
 configToCreateDb = {
-    "host": hostName,
-    "user": userName,
-    "passwd": password,
-    "auth_plugin": "mysql_native_password"
+    "host": cache.hostname,
+    "user": cache.username,
+    "password": cache.password
 }
 
 
@@ -37,10 +32,11 @@ def connection():
 
 
 def createDatabase():
-    log.debug("Create Database " + databaseName)
+    log.debug(cache.hostname + "," + cache.username + "," + cache.password + "," + cache.database)
+    log.debug("Create Database " + cache.database)
     c = connector.connect(**configToCreateDb)
     cur = c.cursor()
-    sql = "CREATE DATABASE IF NOT EXISTS " + databaseName
+    sql = "CREATE DATABASE IF NOT EXISTS " + cache.database
     cur.execute(sql)
     c.commit()
 

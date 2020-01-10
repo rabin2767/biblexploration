@@ -1,0 +1,80 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="{{url_for('static', filename='config.js')}}">
+    </script>
+    <script>
+        function tt() {
+            alert("In Progress !")
+        }
+    </script>
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/setup">Bible Xploration</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>Database Setup <small>Select Bible Versions</small></h1>
+            </div>
+
+            <ol class="breadcrumb">
+                <li><a href="/setup">Home</a></li>
+                <li><a href="/setup_continue">Setup</a></li>
+                <li><a href="/select_lang">Select Bible Versions</a></li>
+            </ol>
+
+            <div class="col-md-8">
+                <form method="post" action="{{ url_for('select_lang')}}">
+                    <div class="custom-control custom-checkbox">
+                        <input  name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked1" value="web">
+                        <label class="custom-control-label" for="defaultUnchecked1">World English Bible (web)</label>
+                    </div>
+                        <div class="custom-control custom-checkbox">
+                        <input name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked2" value="kjv">
+                        <label class="custom-control-label" for="defaultUnchecked2">King James Version (kjv)</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input  name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked3" value="cherokee">
+                        <label class="custom-control-label" for="defaultUnchecked3">Cherokee New Testament (cherokee)</label>
+                    </div>
+                        <div class="custom-control custom-checkbox">
+                        <input name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked4" value="clementine">
+                        <label class="custom-control-label" for="defaultUnchecked4">Clementine Latin Vulgate (clementine)</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input  name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked5" value="almeida">
+                        <label class="custom-control-label" for="defaultUnchecked5">João Ferreira de Almeida (almeida)</label>
+                    </div>
+                        <div class="custom-control custom-checkbox">
+                        <input name="language" type="checkbox" class="custom-control-input" id="defaultUnchecked6" value="rccv">
+                        <label class="custom-control-label" for="defaultUnchecked6">Romanian Corrected Cornilescu Version (rccv)</label>
+                    </div>
+
+                    <div class="input-group row">
+                        <button type="submit" class="btn btn-success">Save & Run</button>
+                        <button type="button" class="btn btn-danger" onclick="this.form.reset()">Clear</button>
+                        <br>
+                    </div>
+                </form>
+
+                <div>
+                    <nav aria-label="...">
+                      <ul class="pager">
+
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

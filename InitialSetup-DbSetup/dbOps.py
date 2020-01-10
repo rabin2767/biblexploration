@@ -1,11 +1,8 @@
 from dbConnect import connection, createDatabase
 import booksDetails as book_details
 
-createDatabase()
 cn = connection()
 cur = cn.cursor()
-
-
 
 
 def createBibleBooks(books):

@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from logConnect import initializeLog
 import dbSetupCache as cache
+from dbConnect import connection, createDatabase
+
 
 log = initializeLog("setup.log")
 
@@ -28,13 +30,27 @@ def initialize_db():
     cache.username = request.form['username']
     cache.password = request.form['passcode']
     cache.database = request.form['database']
-    log.debug(cache.hostname)
-    return "terst"
+    return render_template("select_options.html")
+
+
+@app.route('/select_lang', methods=['POST'])
+def select_lang():
+    log.debug("Saving details for languages")
+    cache.language = request.form.getlist('language')
+
+    createDatabase()
+
+    return render_template("index.html")
 
 
 @app.route('/')
 def index():
-    return "Rabin"
+    return render_template("index.html")
+
+
+@app.route('/select_lang')
+def select_lang_render():
+    return render_template("select_options.html")
 
 
 if __name__ == '__main__':
